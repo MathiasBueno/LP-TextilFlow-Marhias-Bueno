@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TextilFlow - Digitaliza el control de calidad textil</title>
     <link rel="stylesheet" href="css/styles.css">
+     <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+     <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
+     
+    
 </head>
 <body>
-    <header>
-          <a href="#" class="logo">
-              <img src="img/TFLogo.png" alt="TextilFlow Logo">
-          </a>
-          <nav>
-            <a href="#benefits">Producto</a>
-            <a href="#company">Nosotros</a>
-            <a href="#pricing">Planes</a>
-            <a href="#" class="register-button">Registrar</a>
-            <a href="#" class="login-button">Iniciar Sesión</a>
-          </nav>
-          <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-    </header>
+  <header>
+        <a href="#" class="logo">
+            <img src="img/TFLogo.png" alt="TextilFlow Logo">
+        </a>
+        <nav>
+          <a href="#benefits">Producto</a>
+          <a href="#company">Nosotros</a>
+          <a href="#videos">Videos</a>
+          <a href="#pricing">Planes</a>
+          <a href="https://textilflow.web.app/register" class="register-button">Registrar</a>
+          <a href="https://textilflow.web.app/login" class="login-button">Iniciar Sesión</a>
+        </nav>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+         <div id="language-switcher">
+          <button data-language="es" onclick="changeLanguage('es')" class="active">ES</button>
+          <button data-language="en" onclick="changeLanguage('en')">EN</button>
+        </div>
+  </header>
 
-    <section class="main-banner">
+  <section class="main-banner">
         <div class="banner-accent"></div>
         <div class="banner-background">
             <img src="img/TFBackground.png" alt="Fábrica textil">
@@ -36,12 +46,11 @@
             <h1>DIGITALIZA EL<br>
             <span class="text-highlight">CONTROL DE</span> CALIDAD TEXTIL</h1>
             <p>La plataforma colaborativa que asegura la trazabilidad de tus lotes de tela, optimiza tus procesos y reduce pérdidas en la cadena de suministro.</p>
-            <a href="#" class="cta-main">Conoce más</a>
+            <a href="#videos" id="read-more-btn" class="cta-main">Conoce más</a>
         </div>
-    </section>
+  </section>
 
-
-    <section id="benefits" class="benefits-section">
+  <section id="benefits" class="benefits-section">
         <h2 class="section-heading">¿Por qué elegir TextilFlow?</h2>
         
         <div class="benefits-background">
@@ -93,21 +102,21 @@
         </div>
         
         <div class="benefits-action">
-            <a href="#" class="demo-button">Ver cómo funciona</a>
+            <a href="#"  id="how-it-works-btn" class="demo-button">Ver cómo funciona</a>
         </div>
-    </section>
-
-    <section id="company" class="company-section">
-        <div id="company-bg-animation" class="company-background-animation"></div>
-        <div class="company-container">
-            <div class="company-gallery">
+  </section>
+  
+  <section id="company" class="company-section">
+      <div id="company-bg-animation" class="company-background-animation"></div>
+      <div class="company-container">
+          <div class="company-gallery">
             <div class="textile-machine">
-                <img src="img/loom-machine.png" alt="Telar industrial">
+              <img src="img/loom-machine.png" alt="Telar industrial">
             </div>
             <div class="brand-emblem">
-                <div class="textile-logo">
+              <div class="textile-logo">
                 <img src="img/TFLogo.png" alt="TextilFlow Emblema">
-                </div>
+              </div>
             </div>
             <div class="gallery-row">
                 <div class="fabric-sample">
@@ -117,31 +126,70 @@
                     <img src="img/industrial-sewing.png" alt="Máquina de coser industrial">
                 </div>
             </div>
-        </div>
-            
-        <div class="company-content">
+      </div>
+          
+      <div class= "company-content"  id="company">
             <h2 class="company-heading">QUIENES SOMOS</h2>
             
-            <p class="company-intro">
-                Startup fundada por estudiantes de la UPC, comprometida con digitalizar y optimizar la gestión de calidad en el sector textil. Nuestra plataforma facilita el control, la trazabilidad y la transparencia en cada lote de tela.
-            </p>
+          <p class="company-intro">
+              Startup fundada por estudiantes de la UPC, comprometida con digitalizar y optimizar la gestión de calidad en el sector textil. Nuestra plataforma facilita el control, la trazabilidad y la transparencia en cada lote de tela.
+          </p>
             
-            <div class="company-values">
+          <div class="company-values">
             <p><strong>Misión:</strong> Brindar una herramienta digital que permita verificar, documentar y respaldar la calidad textil, fortaleciendo la confianza y reduciendo errores en la cadena de suministro.</p>
-                
+              
             <p><strong>Visión:</strong> Liderar la trazabilidad textil en Latinoamérica con una solución open source que impulse relaciones más justas y eficientes en la industria.</p>
-            </div>
+          </div>
 
-            <div class="textile-animation">
+          <div class="textile-animation">
 
-            </div>
-            </div>
-        </div>
+          </div>
+          </div>
+      </div>
 
-     </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="pricing" class="pricing-section">
+<!--  Sección de Videos -->
+<section id="videos" class="videos-section">
+  <h2 class="videos-heading">CONOCE MÁS SOBRE TEXTILFLOW</h2>
+  <div class="videos-container">
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/Jvf18W_N2uU?autoplay=1&mute=1&loop=1&playlist=Jvf18W_N2uU" 
+          title="TextilFlow - Producto" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-info">
+        <h3>Conoce Nuestro Producto</h3>
+        <p>Descubre cómo TextilFlow revoluciona el control de calidad textil con tecnología innovadora y procesos optimizados.</p>
+      </div>
+    </div>
+    
+    <div class="video-card">
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/MkROcNKX4xE?autoplay=1&mute=1&loop=1&playlist=MkROcNKX4xE" 
+          title="TextilFlow - Equipo" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-info">
+        <h3>Conoce Nuestro Equipo</h3>
+        <p>Conoce al equipo de estudiantes de la UPC comprometidos con transformar la industria textil a través de la digitalización.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="pricing" class="pricing-section">
         <h2 class="pricing-heading">PLANES</h2>
         
         <div class="pricing-container">
@@ -155,7 +203,9 @@
               <li>4 Reportes de calidad en PDF básicos</li>
             </ul>
             <div class="card-accent"></div>
-          </div>
+            <a href="https://textilflow.web.app/register" target="_blank" class="subscribe-button">Suscribirme</a>
+
+        </div>
           
           <!-- Plan Corporativo -->
           <div class="price-card">
@@ -167,70 +217,196 @@
               <li>Hasta 100 fotos mensuales</li>
               <li>Reportes de calidad en PDF</li>
               <li>Fotos ilimitadas</li>
+              <li>Acceso al Chatbot de TextilFlow</li>
             </ul>
             <div class="card-accent"></div>
+            <a href="https://textilflow.web.app/register " target="_blank" class="subscribe-button" >Suscribirme</a>
+
+
           </div>
         </div>
-  </section>
+  </section>
 
-    <section class="contact-section">
-        <div class="textile-canvas"></div>
-        <div class="contact-wrapper">
-            <div class="form-wrapper">
-                <h2>CONTÁCTANOS</h2>
-                <form class="contact-form">
-                    <div class="input-row">
-                        <div class="input-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Naim">
-                        </div>
-                        <div class="input-group">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" id="apellido" placeholder="losRojitas">
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="naim@gmail.com">
-                    </div>
-                    <div class="input-group">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" id="direccion" placeholder="UPC San Miguel">
-                    </div>
-                    <div class="input-group">
-                        <label for="descripcion">Descripción</label>
-                        <textarea id="descripcion" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Enviar</button>
-                </form>
+
+
+  <!-- Sección de Preguntas Frecuentes -->
+  <section class="faq-section">
+        <h2>PREGUNTAS FRECUENTES</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cómo funciona TextilFlow?</h3>
+                    <button class="toggle-icon">+</button>
+                </div>
+                <div class="faq-answer">
+                    <p>TextilFlow permite registrar, verificar y documentar el estado de los lotes de tela en tiempo real. Puedes agregar observaciones, fotos de evidencia y generar reportes automáticos que respaldan cada entrega o recepción.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿A quién está dirigido?</h3>
+                    <button class="toggle-icon">+</button>
+                </div>
+                <div class="faq-answer">
+                    <p>A empresas textiles, talleres de confección y distribuidores de insumos que buscan mejorar el control de calidad, reducir pérdidas y fortalecer la transparencia en su cadena de suministro.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Qué necesito para empezar a usarlo?</h3>
+                    <button class="toggle-icon">+</button>
+                </div>
+                <div class="faq-answer">
+                    <p>Solo necesitas acceso a internet y un dispositivo (PC, tablet o celular).</p>
+                </div>
             </div>
         </div>
+  </section>
 
-
-    </section>
-
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="img/TFLogoW.png" alt="TextilFlow Logo">
-            </div>
-            <div class="social-links">
-                <a href="https://facebook.com/textilflow" aria-label="Facebook" target="_blank">
-                    <img src="img/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://instagram.com/textilflow" aria-label="Instagram" target="_blank">
-                    <img src="img/instagram.png" alt="Instagram">
-                </a>
-            </div>            
+  <section id="contact"  class="contact-section">
+    <div class="textile-canvas"></div>
+    <div class="contact-wrapper">
+        <div class="form-wrapper">
+            <h2>CONTÁCTANOS</h2>
+            <form class="contact-form">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" placeholder="Naim">
+                    </div>
+                    <div class="input-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" placeholder="losRojitas">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="naim@gmail.com">
+                </div>
+                <div class="input-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" placeholder="UPC San Miguel">
+                </div>
+                <div class="input-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 TextilFlow Todos los derechos reservados</p>
-        </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <script src="js/grid-animation.js"></script>
-    <script src="js\main.js"></script>
+  <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <img src="img/TFLogoW.png" alt="TextilFlow Logo">
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61578146035252" aria-label="Facebook" target="_blank">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/textilflow/" aria-label="Instagram" target="_blank">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+        </div>  
+        </div>
+            <div id="language-switcher">
+          <button data-language="es" onclick="changeLanguage('es')" class="active">ES</button>
+          <button data-language="en" onclick="changeLanguage('en')">EN</button>
+        </div>          
+    </div>
+    <div class="copyright">
+        <p>&copy; 2025 TextilFlow Todos los derechos reservados</p>
+    </div>
+  </footer>
+  <div id="payment-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Datos de Pago</h2>
+    <p>Todos los campos son necesarios.</p>
+    
+    <form class="checkout-form" novalidate>
+  <label for="plan-type">Tipo de plan</label>
+  <input type="text" id="plan-type" disabled>
+
+  <label for="payment-option">Opción de pago</label>
+  <select id="payment-option">
+    <option value="mensual">Mensual - $9.99</option>
+    <option value="anual">Anual - $99.99</option>
+  </select>
+
+  <label for="country">País</label>
+  <select id="country" required>
+    <option value="">Seleccione su país</option>
+    <option>Perú</option>
+    <option>México</option>
+    <option>Argentina</option>
+    <option>Colombia</option>
+  </select>
+
+  <label for="card-name">Nombre del titular</label>
+  <input type="text" id="card-name" placeholder="Ej: Juan Pérez" required>
+
+  <div class="card-logos">
+    <img src="img/visa.png" alt="Visa">
+    <img src="img/mastercard.png" alt="MasterCard">
+  </div>
+
+  <label for="card-number">Número de tarjeta</label>
+  <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="16" pattern="\d{16}" required>
+
+  <div class="input-row">
+    <div class="input-group">
+      <label for="expiry-month">Mes</label>
+      <select id="expiry-month" required>
+        <option value="">Mes</option>
+        <option>01</option>
+        <option>02</option>
+        <option>03</option>
+        <option>04</option>
+        <option>05</option>
+        <option>06</option>
+        <option>07</option>
+        <option>08</option>
+        <option>09</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label for="expiry-year">Año</label>
+      <select id="expiry-year" required>
+        <option value="">Año</option>
+        <option>2025</option>
+        <option>2026</option>
+        <option>2027</option>
+        <option>2028</option>
+        <option>2029</option>
+        <option>2030</option>
+      </select>
+    </div>
+  </div>
+
+  <label for="cvv">Código de seguridad (CVV)</label>
+  <input type="text" id="cvv" placeholder="Ej: 123" maxlength="3" pattern="\d{3}" required>
+
+  <button type="submit" class="submit-button">Pagar Ahora</button>
+</form>
+
+  </div>
+</div>
+
+ 
+
+  
+<script src="js/i18n.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="js/grid-animation.js"></script>
+<script src="js\main.js"></script> 
 
 
 </body>

@@ -12,7 +12,7 @@ body {
     background-color: #ffffff;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: 'Lato', sans-serif; /* Aplicar Lato como fuente base para todo el texto */
+    font-family: 'Lato', sans-serif; 
 }
 
 /* Aplicar Manrope a todos los títulos */
@@ -48,33 +48,52 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 15px 40px; /* Reducido de 20px a 15px */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
 }
 
-/* Logo */
 .logo {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center;     
+    justify-content: center; 
     text-decoration: none;
     position: relative;
-    top: -14px; /* Mueve hacia arriba */
-    right: -20px; /* Mueve hacia la derecha */
+    right: -20px;
+    top: -20px; /* Mueve el logo 5px hacia arriba */
+    background-color: #fff; 
+    border-radius: 100px;
+    width: 135px;    
+    height: 135px;   
+    padding: 0;      
+    overflow: hidden;
+    
 }
 
 .logo img {
-    width: auto;
-    height: 140px; 
-    max-width: 100%;
+    width: 110px;    
+    height: 110px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px; 
+    }
+    
+    .main-banner {
+        padding-top: 100px; 
+    }
 }
 
 /* Navegación */
 nav {
-    top: -14px;
+    
     display: flex;
     gap: 0px;
     align-items: center;
@@ -88,7 +107,7 @@ nav a {
     font-size: 20px;
     position: relative;
     padding: 8px 80px;
-    font-family: 'Manrope', sans-serif; /* Menú con Manrope */
+    font-family: 'Manrope', sans-serif; 
 }
 
 nav a:hover {
@@ -116,7 +135,7 @@ nav a:nth-child(4)::before {
     font-weight: bold;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    font-family: 'Manrope', sans-serif; /* Botón con Manrope */
+    font-family: 'Manrope', sans-serif; 
 }
 
 .login-button:hover {
@@ -157,19 +176,56 @@ nav a:nth-child(4)::before {
     z-index: 1000;
 }
 
+
+#language-switcher {
+    position: fixed;
+    top: 10px;
+    right: 40px; /* Aumentado de 50px a 100px para moverlo más a la izquierda */
+    z-index: 1000;
+    display:flex;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+  
+#language-switcher button {
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-right: 1px solid #eee;
+}
+  
+#language-switcher button:last-child {
+    border-right: none;
+}
+  
+#language-switcher button.active {
+    background-color: #5a4527;
+    color: white;
+}
+  
+#language-switcher button:hover:not(.active) {
+    background-color: #f5f5f5;
+}
+
 /* Cambios al hacer scroll */
 
 /* Header cambiado */
 .mobile-header {
-    background-color: #2A1905;
-    padding: 10px 20px;
+     background-color: #2A1905;
+    padding: 8px 20px; /* Reducido el padding vertical */
+    height: 50px; /* Altura fija más pequeña */
+    display: flex;
+    align-items: center;
 }
 
 .mobile-header .logo {
-    background-color: white;
-    top: 1px;
-    padding: 10px 15px;
-    border-radius: 50px;
+      display: none;
 }
 
 /* Oculta la navegación normal */
@@ -237,7 +293,7 @@ nav a:nth-child(4)::before {
     margin-top: 100px;
     font-size: 42px;
     font-style: normal;
-    font-weight: 700; /* Peso adecuado para Manrope en títulos grandes */
+    font-weight: 700; 
     line-height: normal;
 }
 
@@ -263,7 +319,7 @@ nav a:nth-child(4)::before {
     text-decoration: none;
     font-size: 20px;
     transition: background-color 0.3s ease;
-    font-family: 'Manrope', sans-serif; /* Botones con Manrope */
+    font-family: 'Manrope', sans-serif; 
 }
 
 .cta-main:hover {
@@ -319,7 +375,7 @@ nav a:nth-child(4)::before {
     position: relative;
     z-index: 1;
     color: #000;
-    font-weight: 700; /* Peso adecuado para Manrope en títulos */
+    font-weight: 700; 
 }
 
 /* Contenedor de tarjetas */
@@ -398,13 +454,12 @@ nav a:nth-child(4)::before {
     background-size: 200% 200%;
     background-position: right bottom;
     transition: background-position 0.4s ease;
-    font-family: 'Manrope', sans-serif; /* Botones con Manrope */
+    font-family: 'Manrope', sans-serif; 
 }
 
 .demo-button:hover {
     background-position: left top;
 }
-
 
 /* Estilos para la sección de Company (Former BuildWise) */
 .company-section {
@@ -412,7 +467,7 @@ nav a:nth-child(4)::before {
     background-color: #f5f1ec;
     padding: 80px;
     width: 100%;
-    overflow: hidden; /* Importante para contener la animación */
+    overflow: hidden; 
 }
   
 /* Contenedor para la animación de fondo */
@@ -423,7 +478,7 @@ nav a:nth-child(4)::before {
     width: 100%;
     height: 100%;
     z-index: 0;
-    pointer-events: none; /* Permite que los clicks pasen a través de la animación */
+    pointer-events: none; 
  }
   
   /* Asegurarse de que el canvas ocupe todo el espacio */
@@ -549,7 +604,6 @@ nav a:nth-child(4)::before {
     z-index: 2;
     width: 60%;
     padding: 20px 20px 20px 0;
-    /* Añadir un fondo semi-transparente si se desea más contraste con la animación */
     background-color: rgba(245, 241, 236, 0.7);
     border-radius: 10px;
     padding: 25px;
@@ -581,6 +635,7 @@ nav a:nth-child(4)::before {
     font-weight: bold;
     color: #2A1905;
 }
+
 
 /* Estilos para la sección de Pricing (Former Planes) */
 .pricing-section {
@@ -665,9 +720,85 @@ nav a:nth-child(4)::before {
     width: 15%;
     height: 15%;
     background-color: transparent;
-    z-index:-1;
+    z-index: -1;
+}
+ 
+/* Estilos para la sección de Preguntas Frecuentes */
+.faq-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    text-align: center;
 }
 
+.faq-section h2 {
+    color: #866C52;
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.faq-question {
+    background: #A08B7A;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin: 0;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.toggle-icon {
+    background: #352A21;
+    color: #ffffff;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.faq-answer {
+    padding: 1.5rem;
+    line-height: 1.6;
+    display: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(45deg);
+}
 
 /* Estilos para la sección de Contacto */
 .contact-section {
@@ -753,6 +884,25 @@ nav a:nth-child(4)::before {
 .submit-button:hover {
     background: #755E48;
 }
+
+/* Estilos para la animación de hilos en la sección de contacto */
+.textile-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.25;
+    background-color: #f5f1ec;
+}
+  
+.textile-canvas canvas {
+    width: 100%;
+    height: 100%;
+}
+
+
 .site-footer {
     background-color: #2A1905;
     padding: 2rem;
@@ -785,19 +935,18 @@ nav a:nth-child(4)::before {
     filter: brightness(0) invert(1);
 }
 
-
-
-
-
-
-
-
-
-
+.copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
 
 /* =================== */
 /*      RESPONSIVE      */
 /* =================== */
+
+
 
 /* HEADER - MENU TOGGLE */
 @media (max-width: 992px) {
@@ -975,6 +1124,9 @@ nav a:nth-child(4)::before {
     }
 }
 
+
+
+
 /* FAQ SECTION */
 @media (max-width: 768px) {
     .faq-section {
@@ -1028,7 +1180,7 @@ nav a:nth-child(4)::before {
     }
 }
 
-/* Modificaciones para responsive */
+
 @media (max-width: 992px) {
     .contact-wrapper {
       justify-content: center;
@@ -1041,9 +1193,9 @@ nav a:nth-child(4)::before {
     }
 }
 
-/* Para pantallas medianas (tablets) */
+
 @media screen and (max-width: 991px) and (min-width: 768px) {
-    /* Ajustes ya mencionados anteriormente */
+    
     .main-banner {
         height: auto;
         min-height: 100vh;
@@ -1054,16 +1206,16 @@ nav a:nth-child(4)::before {
         opacity: 0.85;
     }
     
-    /* Ajuste para menú */
+    
     nav a {
         padding: 8px 15px;
         font-size: 16px;
     }
 }
 
-/* Para móviles grandes (como iPhone Plus, Galaxy S) */
+
 @media screen and (max-width: 767px) and (min-width: 576px) {
-    /* Simplificar layout para móviles grandes */
+    
     .banner-accent {
         clip-path: polygon(40% -20%, 200% -100%, 100% 100%, 0% 20%);
         opacity: 0.8;
@@ -1095,7 +1247,7 @@ nav a:nth-child(4)::before {
         font-size: 32px;
     }
     
-    /* Menú hamburguesa */
+    
     .mobile-header {
         padding: 10px 15px;
     }
@@ -1105,11 +1257,11 @@ nav a:nth-child(4)::before {
     }
 }
 
-/* Para móviles pequeños */
+
 @media screen and (max-width: 575px) {
-    /* Layout muy simplificado para pantallas muy pequeñas */
+    
     .banner-accent {
-        display: none; /* Quitar completamente en pantallas muy pequeñas */
+        display: none; 
     }
     
     .main-banner {
@@ -1158,7 +1310,7 @@ nav a:nth-child(4)::before {
         text-align: center;
     }
     
-    /* Ajustes de header para móviles muy pequeños */
+    
     .logo img {
         height: 70px;
     }
@@ -1167,7 +1319,7 @@ nav a:nth-child(4)::before {
         padding: 10px;
     }
     
-    /* Menú ajustado para pantallas pequeñas */
+   
     .show-nav {
         width: 100%;
         right: 0;
@@ -1182,7 +1334,7 @@ nav a:nth-child(4)::before {
     }
 }
 
-/* Ajuste extremadamente pequeño (iPhone SE o similar) */
+
 @media screen and (max-width: 375px) {
     .banner-content h1 {
         font-size: 24px;
@@ -1199,15 +1351,15 @@ nav a:nth-child(4)::before {
 }
 
 
-/* Estilos mejorados para el menú hamburguesa y desplegable */
+
 @media (max-width: 992px) {
-    /* Header con fondo marrón */
+    
     header {
         background-color: #2A1905;
         padding: 12px 20px;
     }
     
-    /* Menú hamburguesa */
+    
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -1227,13 +1379,13 @@ nav a:nth-child(4)::before {
         transition: all 0.3s ease;
     }
     
-    /* Estilo del menú desplegable - mejorado */
+
     nav.show-nav {
         display: flex;
         flex-direction: column;
         background-color: #2A1905;
         position: absolute;
-        top: 85px; /* Ajustar según la altura de tu header */
+        top: 85px; 
         left: 0;
         width: 100%;
         padding: 0;
@@ -1267,12 +1419,12 @@ nav a:nth-child(4)::before {
         background-color: rgba(255,255,255,0.05);
     }
     
-    /* Separador vertical */
+
     nav.show-nav a:not(:last-child) {
         position: relative;
     }
     
-    /* Botón iniciar sesión dentro del menú */
+    
     nav.show-nav a.login-button {
         margin: 15px 25px;
         padding: 12px 20px;
@@ -1284,7 +1436,7 @@ nav a:nth-child(4)::before {
         border: none;
     }
     
-    /* Si tienes un botón de iniciar sesión separado, ocúltalo cuando se muestra el menú */
+   
     .login-button:not(nav .login-button) {
         display: inline-block;
         position: absolute;
@@ -1313,4 +1465,309 @@ nav a:nth-child(4)::before {
         font-size: 13px;
         right: 50px;
     }
+}
+
+.subscribe-button {
+  background-color: #866C52;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.subscribe-button:hover {
+  background-color: #2A1905;
+  transform: scale(1.05);
+}
+
+
+.card-logos img {
+  width: 50px;
+  margin: 5px 5px 15px 0;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group {
+  flex: 1;
+}
+
+.checkout-form select,
+.checkout-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  background-color: #866C52;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #866C52;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #2A1905;
+}
+
+.modal-content p {
+  margin: 10px 0 20px;
+  color: #444;
+}
+
+.modal-content input,
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-content .submit-button {
+  background-color: #866C52;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-content .submit-button:hover {
+  background-color: #2A1905;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* =================== */
+/*   SECCIÓN DE VIDEOS  */
+/* =================== */
+
+.videos-section {
+    background-color: #f5f1ec;
+    padding: 80px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.videos-heading {
+    font-family: 'Manrope', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #2A1905;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.videos-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 500px;
+    box-shadow: 0 8px 24px rgba(42, 25, 5, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(42, 25, 5, 0.25);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info {
+    padding: 25px;
+    text-align: left;
+}
+
+.video-info h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2A1905;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.video-info p {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =================== */
+/*   RESPONSIVE VIDEOS  */
+/* =================== */
+
+@media (max-width: 1100px) {
+    .videos-container {
+        gap: 40px;
+    }
+    
+    .video-card {
+        width: 450px;
+    }
+}
+
+@media (max-width: 992px) {
+    .videos-section {
+        padding: 60px 20px;
+    }
+    
+    .videos-heading {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .videos-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .video-card {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .videos-section {
+        padding: 40px 15px;
+    }
+    
+    .videos-heading {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+    
+    .video-card {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .video-info {
+        padding: 20px;
+    }
+    
+    .video-info h3 {
+        font-size: 20px;
+    }
+    
+    .video-info p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .videos-section {
+        padding: 30px 10px;
+    }
+    
+    .videos-heading {
+        font-size: 22px;
+    }
+    
+    .video-info {
+        padding: 15px;
+    }
+    
+    .video-info h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .video-info p {
+        font-size: 14px;
+    }
+}
+
+.videos-section {
+    background-color: #f5f1ec;
+    padding: 80px 20px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.videos-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #2A1905 0%, #866C52 50%, #2A1905 100%);
 }
